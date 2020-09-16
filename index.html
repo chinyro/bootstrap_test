@@ -36,9 +36,9 @@
                 </div>
             </div>
         </nav>
+        <!--Login Modal-->
         <div id="loginModal" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg" role="content">
-                <!-- Login modal-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Login </h4>
@@ -73,9 +73,9 @@
                 </div>
             </div>
         </div>
+        <!-- Reservation Modal-->
         <div id="reservationModal" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg" role="content">
-                <!-- Reservation modal-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Reserve a Table</h4>
@@ -118,8 +118,7 @@
                                     </div>
                                 </div>
                             </div>
-
-
+                            <!-- Smoking section-->
                             <div class="form-group row">
                                 <label for="date-time" class="col-12 col-md-2 col-form-label">Section</label>
                                 <div class="btn-group btn-group-toggle col-12 col-md-10" data-toggle="buttons">
@@ -134,7 +133,7 @@
 
                                 </div>
                             </div>
-
+                            <!-- Date and Time section-->
                             <div class="form-group row">
                                 <label for="date-time" class="col-12 col-md-2 col-form-label">Date and Time</label>
                                 <div class="col-5 col-md-3">
@@ -144,7 +143,7 @@
                                     <input type="text" class="form-control" id="time" name="time" placeholder="Time">
                                 </div>
                             </div>
-
+                            <!--Reserve and Cancel Buttons-->
                             <div class="form-row">
                                 <div class="offset-md-2 col-md-10">
                                     <button type="button" class="btn btn-secondary ml-auto" data-dismiss="modal">Cancel</button>
@@ -156,6 +155,7 @@
                 </div>
             </div>
         </div>
+        <!--Jumbotron goes separated from above-->
         <header class="jumbotron">
             <div class="container">
                 <div class="row row-header">
@@ -177,7 +177,7 @@
                 </div>
             </div>
         </header>
-
+        <!--Carousel images-->
         <div class="container">
             <div class="row row-content">
                 <div class="col">
@@ -230,9 +230,14 @@
                         <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>
-                        <button class="btn btn-danger btn-sm" id="carouselButton">
-                            <span id="carousel-button-icon" class="fa fa-pause"></span>
-                        </button>
+                        <div class="btn-group" id="carouselButton">
+                            <button class="btn btn-danger btn-sm" id="carousel-pause">
+                                <span class="fa fa-pause"></span>
+                            </button>
+                            <button class="btn btn-danger btn-sm" id="carousel-play">
+                                <span class="fa fa-play"></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -253,8 +258,7 @@
                     </div>
                 </div>
             </div>
-
-
+            <!--Card sections-->
             <div class="row row-content align-items-center">
                 <div class="col-12 col-sm-4 col-md-3">
                     <h3>This Month's Promotions</h3>
@@ -297,7 +301,7 @@
 
         </div>
         </div>
-
+        <!--Footer Section-->
         <footer class="footer">
             <div class="container">
                 <div class="row">
@@ -344,7 +348,7 @@
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
+        <!--JS Elements before /body-->
         <script>
             $("#reservationButton").click(function () {
                 $('#reservationModal').modal('toggle')
@@ -353,6 +357,17 @@
                 $('#loginModal').modal('toggle')
             });
 
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('#mycarousel').carousel({interval: 2000 });
+                $('#carousel-pause').click(function() {
+                    $(#mycarousel).carousel('pause');
+                });
+                $('#carousel-play').click(function() {
+                    $(#mycarousel).carousel('cycle');
+                });
+            });
         </script>
     </body>
 
